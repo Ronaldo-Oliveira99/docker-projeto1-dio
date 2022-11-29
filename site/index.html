@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DESAFIO DIO - CRIANDO UM CONTAINER DE UMA APLICAÇÃO WEB</title>
+</head>
+
+<body>
+    
+    <h1>Supermercado JS</h1>
+    <hr>
+    <p>3) <b>Um supermercado está com uma promoção</b> - Para aumentar suas vendas no setor de higiene,<br> 
+        cada etiqueta de produto deve exibir uma mensagem anunciando 50% de desconto( para um item ) na<br> 
+        compra de três unidades do produto. Elaborar um programa que leia a descricão e preço de um produto.<br> 
+        Após, apresente as mensagens indicando a promoção.
+    </p>
+    <br>
+    <br>
+    <p>Produto:
+        <input type="text" id="inNome"></p>
+    <p>Preço:
+        <input type="text" id="inPreco"></p>
+    <p><input type="button" value="Ver Promoção" id="btSoma"></p>    
+    <h3 id="outPromo"> </h3>
+    <h3 id="outPromo2"> </h3>
+
+
+    
+    <script>
+        function promo(){
+            // referencia dos elementos da página
+            var inNome = document.getElementById("inNome")
+            var inPreco = document.getElementById("inPreco")
+            var outPromo = document.getElementById("outPromo")
+            var outPromo2 = document.getElementById("outPromo2")
+        
+            //obtém conteúdos dos campos da página
+            var nome = inNome.value
+            var preco = Number(inPreco.value)
+        
+            //calcula a soma
+           var desc = preco / 2
+           var total= (preco * 3) - desc
+        
+            // altera o conteudo dos paragrafos
+            outPromo.textContent = nome +" - Promoção: Leve 3 por R$" +total.toFixed(2)
+            outPromo2.textContent = "O 3ºproduto custa apenas R$: " +desc.toFixed(2)
+            
+        }
+            //cria uma referencia ao botao
+            var btSoma = document.getElementById("btSoma")
+        
+            // registra um evento associado ao botaom para carregar a funcao
+            btSoma.addEventListener("click", promo)
+
+        </script>
+        <br>
+        <br>
+        <p>
+            <a href="../index.html"> voltar</a>
+        </p>
+</body>
+
+
+</html>
